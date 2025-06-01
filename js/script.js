@@ -16,13 +16,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
 
             // Scroll to element
-            // Consider header height if it's fixed and opaque
             const headerHeight = document.querySelector('header').offsetHeight;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
             
             window.scrollTo({
-                top: offsetPosition, // Adjust if you have a fixed header
+                top: offsetPosition, 
                 behavior: 'smooth'
             });
         }
@@ -75,9 +74,9 @@ if (menuToggle && navLinks) {
         const isActive = navLinks.classList.contains('active');
         menuToggle.setAttribute('aria-expanded', isActive);
         if (isActive) {
-            menuToggle.innerHTML = '<i class="fas fa-times"></i>'; // Change to X icon
+            menuToggle.innerHTML = '<i class="fas fa-times"></i>'; 
         } else {
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to bars
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; 
         }
     });
 }
